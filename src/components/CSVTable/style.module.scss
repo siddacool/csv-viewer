@@ -1,0 +1,14 @@
+.CSVTable {
+  width: 100%;
+  padding: 0;
+  border-collapse: collapse;
+
+  tbody {
+    padding: 0;
+  }
+
+  td {
+    border: 1px solid #bcbcbc;
+    padding: 3px;
+  }
+}
