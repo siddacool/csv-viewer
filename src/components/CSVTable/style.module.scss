@@ -1,11 +1,15 @@
 .CSVTable {
   overflow: auto;
   width: 100%;
-  border: 1px solid #bcbcbc;
+  border: 1px solid var(--color-backdrop);
+  background-color: var(--color-white);
+  height: calc(100vh - 60px);
 
   @media (min-width: 900px) {
     height: calc(100vh - 70px);
     margin-top: 40px;
+    width: calc(100vw - 10px);
+    margin-left: 5px;
   }
 
   table {
@@ -21,5 +25,16 @@
   td {
     border: 1px solid #bcbcbc;
     padding: 3px;
+  }
+
+  tr {
+    &:first-child {
+      font-weight: 500;
+      position: sticky;
+      top: -1px;
+      left: 0;
+      background-color: var(--color-white);
+      border-bottom: 1px solid var(--color-backdrop);
+    }
   }
 }
