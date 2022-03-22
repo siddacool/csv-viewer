@@ -1,0 +1,25 @@
+.ToolbarDesktop {
+  height: 30px;
+  padding: 0 8px;
+  display: flex;
+  align-items: center;
+}
+
+.ToolbarItem {
+  display: inline-flex;
+  background-color: var(--color-btn-safe-light);
+  cursor: pointer;
+  height: 25px;
+  border-radius: 4px;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-black);
+  border: 1px solid var(--color-backdrop-2);
+
+  svg {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+  }
+}

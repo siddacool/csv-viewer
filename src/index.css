@@ -18,9 +18,12 @@ code {
 
 :root {
   --color-white: #fff;
+  --color-black: #000;
   --color-backdrop: #e5e5e5;
+  --color-backdrop-2: #bcbcbc;
   --color-const-white: #fff;
   --color-btn-safe: green;
+  --color-btn-safe-light: #d7ffdc;
   --color-text-grey: #767676;
   --color-text-blue: #3c42ff;
 
