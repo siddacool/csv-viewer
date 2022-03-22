@@ -1,54 +1,48 @@
 .ToolbarDesktop {
   padding: 0 8px;
-  display: flex;
+  display: none;
   align-items: center;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 60px;
+  height: 30px;
   width: 100vw;
 
   @media (min-width: 900px) {
-    position: static;
-    height: 30px;
+    display: flex;
   }
 }
 
 .ToolbarItem {
   display: inline-flex;
-  background-color: var(--color-btn-safe-light);
   cursor: pointer;
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  align-items: center;
+  height: 25px;
   font-size: 0.9rem;
   font-weight: 500;
   color: var(--color-black);
-  border: 1px solid var(--color-backdrop-2);
-  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+  margin-right: 8px;
+  border-radius: 3px;
 
-  @media (min-width: 900px) {
-    height: 25px;
-    width: initial;
-    justify-content: flex-start;
-    border-radius: 4px;
+  &:hover {
+    background-color: var(--color-hover-safe);
   }
 
-  span {
-    display: none;
-    @media (min-width: 900px) {
-      display: inline-flex;
-    }
+  section {
+    display: flex;
+    align-items: center;
+    height: 100%;
   }
 
   svg {
-    width: 25px;
-    height: 25px;
-    @media (min-width: 900px) {
-      width: 16px;
-      height: 16px;
-      margin-right: 5px;
-    }
+    width: 16px;
+    height: 16px;
+    margin-right: 3px;
+  }
+}
+
+.SettingsMenu {
+  ul {
+    left: -83px;
+    top: 13px;
   }
 }

@@ -1,5 +1,5 @@
 import { Component, onCleanup, onMount, Show } from 'solid-js';
-import { csvData } from './store';
+import { csvData, darkTheme, darkThemeSet } from './store';
 import { pasteDetector } from './utils';
 import CsvView from './views/CsvView';
 import OpenView from './views/OpenView';
@@ -9,6 +9,8 @@ const body = document.querySelector('body');
 const App: Component = () => {
   onMount(() => {
     body?.addEventListener('keydown', pasteDetector);
+
+    darkThemeSet();
   });
 
   onCleanup(() => {

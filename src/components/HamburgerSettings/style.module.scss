@@ -1,0 +1,40 @@
+.HamburgerSettings {
+  display: flex;
+  bottom: 16px;
+  right: 16px;
+  position: fixed;
+  z-index: 600;
+
+  @media (min-width: 900px) {
+    display: none;
+  }
+}
+
+.HamburgerMenu {
+  ul {
+    left: initial;
+    right: 10px;
+    top: initial;
+    bottom: 10px;
+  }
+
+  svg {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+  }
+}
+
+.HamburgerButton {
+  cursor: pointer;
+  display: inline-flex;
+  width: 50px;
+  height: 50px;
+  background-color: var(--color-btn-safe);
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-elevation-medium);
+  color: var(--color-const-white);
+  border-radius: 50%;
+  border: none;
+}

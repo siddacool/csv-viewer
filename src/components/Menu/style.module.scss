@@ -1,0 +1,41 @@
+.MenuHolder {
+  display: block;
+  position: relative;
+}
+
+.Menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: var(--color-white);
+  min-width: 200px;
+  max-height: 600px;
+  overflow: auto;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  flex-direction: column;
+  box-shadow: var(--shadow-elevation-medium);
+  border-radius: 4px;
+}
+
+.MenuItem {
+  display: flex;
+  margin: 0;
+  padding: 8px;
+  align-items: center;
+
+  &:hover {
+    background-color: var(--color-hover-safe);
+  }
+}
+
+.screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+}

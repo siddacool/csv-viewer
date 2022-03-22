@@ -17,3 +17,6 @@ export const pasteDetector = async (event: { ctrlKey: any; metaKey: any; keyCode
     }
   }
 };
+
+
+
