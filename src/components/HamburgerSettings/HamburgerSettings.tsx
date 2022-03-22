@@ -1,5 +1,5 @@
 import { Component, createSignal } from 'solid-js';
-import { darkTheme, darkThemeToggle } from '~/store';
+import { darkTheme, darkThemeToggle, clearCsvData } from '~/store';
 import { Menu, MenuItem } from '../Menu';
 import styles from './style.module.scss';
 
@@ -31,7 +31,7 @@ const HamburgerSettings: Component = () => {
         </svg>
       </button>
       <Menu show={showMenu()} class={styles.HamburgerMenu} onClose={handleCloseMenu}>
-        <MenuItem>
+        <MenuItem onClick={clearCsvData}>
           <svg
             class="w-6 h-6"
             fill="none"

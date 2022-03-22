@@ -5,10 +5,6 @@ import { clearCsvData, darkTheme, darkThemeToggle } from '~/store';
 import { Menu, MenuItem } from '../Menu';
 
 const ToolbarDesktop: Component = () => {
-  const handleOpenClick = () => {
-    clearCsvData();
-  };
-
   const [showSettingsMenu, setShowSettingsMenu] = createSignal(false);
 
   const handleShowSetiingsMenu = () => {
@@ -22,7 +18,7 @@ const ToolbarDesktop: Component = () => {
   return (
     <div class={styles.ToolbarDesktop}>
       <Item
-        onClick={handleOpenClick}
+        onClick={clearCsvData}
         icon={
           <svg
             class="w-6 h-6"
