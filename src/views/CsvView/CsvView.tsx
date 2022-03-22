@@ -1,12 +1,13 @@
 import { Component } from 'solid-js';
 import CSVTable from '~/components/CSVTable';
+import styles from './style.module.scss';
 
-const OpenView: Component = () => {
+const CsvView: Component = () => {
   return (
-    <div>
+    <div class={styles.CsvView}>
       <CSVTable />
     </div>
   );
 };
 
-export default OpenView;
+export default CsvView;

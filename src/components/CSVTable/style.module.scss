@@ -1,7 +1,18 @@
 .CSVTable {
+  overflow: auto;
   width: 100%;
-  padding: 0;
-  border-collapse: collapse;
+  border: 1px solid #bcbcbc;
+
+  @media (min-width: 900px) {
+    height: calc(100vh - 70px);
+    margin-top: 40px;
+  }
+
+  table {
+    width: 100%;
+    padding: 0;
+    border-collapse: collapse;
+  }
 
   tbody {
     padding: 0;

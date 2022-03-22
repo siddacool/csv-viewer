@@ -4,21 +4,23 @@ import styles from './style.module.scss';
 
 const CSVTable: Component = () => {
   return (
-    <table class={styles.CSVTable}>
-      <tbody>
-        <For each={csvData.data}>
-          {(csv) => (
-            <tr>
-              <For each={csv}>
-                {(csv2) => {
-                  return <td>{csv2}</td>;
-                }}
-              </For>
-            </tr>
-          )}
-        </For>
-      </tbody>
-    </table>
+    <div class={styles.CSVTable}>
+      <table>
+        <tbody>
+          <For each={csvData.data}>
+            {(csv) => (
+              <tr>
+                <For each={csv}>
+                  {(csv2) => {
+                    return <td>{csv2}</td>;
+                  }}
+                </For>
+              </tr>
+            )}
+          </For>
+        </tbody>
+      </table>
+    </div>
   );
 };
 
