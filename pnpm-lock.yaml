@@ -8,6 +8,7 @@ specifiers:
   vite: ^2.8.6
   vite-plugin-pwa: ^0.11.13
   vite-plugin-solid: ^2.2.6
+  workbox-window: ^6.5.1
 
 dependencies:
   '@satha/core': 2.0.0
@@ -19,6 +20,7 @@ devDependencies:
   vite: 2.8.6_sass@1.49.9
   vite-plugin-pwa: 0.11.13_vite@2.8.6
   vite-plugin-solid: 2.2.6_sass@1.49.9
+  workbox-window: 6.5.1
 
 packages:
 

@@ -13,7 +13,8 @@
     "typescript": "^4.6.2",
     "vite": "^2.8.6",
     "vite-plugin-pwa": "^0.11.13",
-    "vite-plugin-solid": "^2.2.6"
+    "vite-plugin-solid": "^2.2.6",
+    "workbox-window": "^6.5.1"
   },
   "dependencies": {
     "@satha/core": "^2.0.0",
