@@ -1,3 +1,4 @@
+import { createMemo } from 'solid-js';
 import { createStore } from 'solid-js/store';
 import { setDefaultStorageName, createStore as createSathaStore } from '@satha/core';
 import { CSVToArray } from './utils';
@@ -19,6 +20,28 @@ export const addCsvData = (data = '') => {
 export const clearCsvData = () => {
   setStore('data', () => []);
 };
+
+export const dataLength = createMemo(() => {
+  if (!csvData.data.length) {
+    return [];
+  }
+
+  const toReturn: any[] = [];
+
+  csvData.data.forEach((d: any[]) => {
+    d.forEach((d1 = '', i: number) => {
+      if (!toReturn[i]) {
+        toReturn[i] = d1.length;
+      } else {
+        if (d1.length > toReturn[i]) {
+          toReturn[i] = d1.length;
+        }
+      }
+    });
+  });
+
+  return toReturn;
+});
 
 const [darkThemeMain, setDarkTheme] = createStore({ active: darkThemeLocalStorage.get() });
 

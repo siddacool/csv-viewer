@@ -1,38 +1,30 @@
 .CSVTable {
-  overflow: auto;
   width: 100%;
   border: 1px solid var(--color-backdrop);
+}
+
+.VirtualContainerHolder {
+  width: 100%;
+  background-color: var(--color-white);
+  overflow: auto;
 
   height: calc(100vh - 60px);
 
   @media (min-width: 900px) {
     height: calc(100vh - 60px);
   }
+}
 
-  table {
-    width: 100%;
-    padding: 0;
-    border-collapse: collapse;
-    background-color: var(--color-white);
-  }
+.Row {
+  width: 100%;
+  display: flex;
+}
 
-  tbody {
-    padding: 0;
-  }
+.Td {
+  border: 1px solid var(--color-backdrop-2);
+  padding: 3px;
 
-  td {
-    border: 1px solid var(--color-backdrop-2);
-    padding: 3px;
-  }
-
-  tr {
-    &:first-child {
-      font-weight: 500;
-      position: sticky;
-      top: -1px;
-      left: 0;
-      background-color: var(--color-white);
-      border-bottom: 1px solid var(--color-backdrop);
-    }
+  &:last-child {
+    flex: 1;
   }
 }
