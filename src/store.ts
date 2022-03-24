@@ -4,6 +4,7 @@ import { CSVToArray } from './utils';
 
 setDefaultStorageName('csv-viewer-1');
 const darkThemeLocalStorage = createSathaStore('dark-theme', false);
+const themeColor = document.querySelector('meta[name="theme-color"]') as HTMLMetaElement;
 
 const [csvDataMain, setStore] = createStore({ data: [] });
 
@@ -33,13 +34,16 @@ export const darkThemeToggle = () => {
 
   if (newCondition) {
     body?.classList.add('dark');
+    themeColor.content = '#2a2a2a';
   } else {
     body?.classList.remove('dark');
+    themeColor.content = '#e5e5e5';
   }
 };
 
 export const darkThemeSet = () => {
   if (darkThemeMain.active) {
     body?.classList.add('dark');
+    themeColor.content = '#2a2a2a';
   }
 };
