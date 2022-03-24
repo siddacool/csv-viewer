@@ -16,11 +16,21 @@ const pixelCalculator = (length = 0) => {
   return lengthNew;
 };
 
+const totalPixelCalculator = (data: any[] = []) => {
+  let lengthNew = 10 * data.reduce((partialSum, a) => partialSum + a, 0);
+
+  if (lengthNew < 50) {
+    lengthNew = 50;
+  }
+
+  return `${lengthNew}px`;
+};
+
 const Row: Component<RowProps> = (props: RowProps) => {
   return (
     <div
       // Required for items to switch places.
-      style={props.style}
+      style={{ ...props.style, 'min-width': `${totalPixelCalculator(dataLength())}` }}
       // Used for keyboard navigation and accessibility.
       tabIndex={props.tabIndex}
       role="listitem"
