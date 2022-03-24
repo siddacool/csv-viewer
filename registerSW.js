@@ -1,1 +1,0 @@
-if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/csv-viewer/sw.js', { scope: '/csv-viewer/' })})}
