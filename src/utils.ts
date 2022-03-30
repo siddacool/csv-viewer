@@ -18,5 +18,20 @@ export const pasteDetector = async (event: { ctrlKey: any; metaKey: any; keyCode
   }
 };
 
+interface IPixelCalculatorConfig {
+  base?: number;
+  minLength?: number;
+  extraPad?: number;
+}
 
+export const pixelCalculator = (length = 0, config: IPixelCalculatorConfig) => {
+  const { base = 10, extraPad = 0, minLength = 50 } = config || {};
 
+  let lengthNew = base * length + extraPad;
+
+  if (lengthNew < minLength) {
+    lengthNew = minLength;
+  }
+
+  return lengthNew;
+};

@@ -1,23 +1,14 @@
 import { Component, ComponentProps, Index } from 'solid-js';
 import { dataLength } from '~/store';
+import { pixelCalculator } from '~/utils';
 import styles from './style.module.scss';
 
 interface RowProps extends ComponentProps<any> {
   // add props here
 }
 
-const pixelCalculator = (length = 0) => {
-  let lengthNew = 10 * length + 5;
-
-  if (lengthNew < 50) {
-    lengthNew = 50;
-  }
-
-  return lengthNew;
-};
-
 const totalPixelCalculator = (data: any[] = []) => {
-  let lengthNew = 10 * data.reduce((partialSum, a) => partialSum + a, 0);
+  let lengthNew = 10 * data.reduce((partialSum, a) => partialSum + (a + 5), 0);
 
   if (lengthNew < 50) {
     lengthNew = 50;
@@ -41,7 +32,15 @@ const Row: Component<RowProps> = (props: RowProps) => {
           return (
             <div
               class={styles.Td}
-              style={{ width: dataLength()[i] ? `${pixelCalculator(dataLength()[i])}px` : '50px' }}
+              style={{
+                width: dataLength()[i]
+                  ? `${pixelCalculator(dataLength()[i], {
+                      base: 10,
+                      extraPad: 0,
+                      minLength: 50,
+                    })}px`
+                  : '50px',
+              }}
             >
               {item}
             </div>
