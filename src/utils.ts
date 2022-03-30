@@ -35,3 +35,15 @@ export const pixelCalculator = (length = 0, config: IPixelCalculatorConfig) => {
 
   return lengthNew;
 };
+
+export const pixelCalculatorInCh = (length = 0, config: IPixelCalculatorConfig) => {
+  const { extraPad = 0, minLength = 3 } = config || {};
+
+  let lengthNew = length + extraPad;
+
+  if (lengthNew < minLength) {
+    lengthNew = minLength;
+  }
+
+  return lengthNew;
+};

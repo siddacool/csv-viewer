@@ -1,6 +1,6 @@
 import { Component, ComponentProps, Index } from 'solid-js';
 import { dataLength } from '~/store';
-import { pixelCalculator } from '~/utils';
+import { pixelCalculator, pixelCalculatorInCh } from '~/utils';
 import styles from './style.module.scss';
 
 interface RowProps extends ComponentProps<any> {
@@ -8,13 +8,13 @@ interface RowProps extends ComponentProps<any> {
 }
 
 const totalPixelCalculator = (data: any[] = []) => {
-  let lengthNew = 10 * data.reduce((partialSum, a) => partialSum + (a + 5), 0);
+  let lengthNew = data.reduce((partialSum, a) => partialSum + (a + 8), 0);
 
-  if (lengthNew < 50) {
-    lengthNew = 50;
+  if (lengthNew < 3) {
+    lengthNew = 3;
   }
 
-  return `${lengthNew}px`;
+  return `${lengthNew}ch`;
 };
 
 const Row: Component<RowProps> = (props: RowProps) => {
@@ -34,12 +34,10 @@ const Row: Component<RowProps> = (props: RowProps) => {
               class={styles.Td}
               style={{
                 width: dataLength()[i]
-                  ? `${pixelCalculator(dataLength()[i], {
-                      base: 10,
-                      extraPad: 0,
-                      minLength: 50,
-                    })}px`
-                  : '50px',
+                  ? `${pixelCalculatorInCh(dataLength()[i], {
+                      extraPad: 8,
+                    })}ch`
+                  : '3ch',
               }}
             >
               {item}
